@@ -2,10 +2,7 @@ html {
   font-family: system-ui, sans-serif;
   background-color: #f0f2f5;
 }
-code {
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -19,9 +16,13 @@ a {
   outline: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 .container {
   background-color: #fff;
-  width: 90%;
+  width: 95%;
   margin: 2rem auto;
   border-radius: 1.5rem;
   padding: 2rem;
@@ -72,21 +73,17 @@ a {
   padding: 0.75rem;
 }
 
+.container .primary .buttons .active {
+  background-color: #27c3ae;
+  color: #00474a;
+}
+
 /***** SECONDARY SECTION*****/
 
 .container .secondary {
-  margin-top: 2rem;
   background-color: #00474a;
   border-radius: 1rem;
   padding: 2rem 1.2rem;
-}
-
-.container .secondary button {
-  width: 100%;
-  font-size: large;
-  padding: 0.7rem;
-  border-radius: 0.4rem;
-  font-weight: bold;
 }
 
 .container .secondary article {
@@ -104,4 +101,54 @@ a {
 .container .secondary article .price {
   font-weight: bold;
   font-size: x-large;
+}
+
+.container .secondary button {
+  width: 100%;
+  font-size: large;
+  padding: 0.7rem;
+  border-radius: 0.4rem;
+  font-weight: bold;
+  background-color: #27c3ae;
+  color: #00474a;
+}
+
+.container .secondary button:hover {
+  background-color: #2eb8a6;
+}
+
+@media screen and (min-width: 48em) {
+  .container {
+    display: flex;
+    width: 80%;
+    gap: 2rem;
+  }
+
+  .container .primary,
+  .container .secondary {
+    flex: 1;
+  }
+
+  .container .secondary {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .container {
+    display: flex;
+    width: 70%;
+    gap: 2rem;
+  }
+
+  .container .primary,
+  .container .secondary {
+    flex: 1;
+  }
+
+  .container .secondary {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
 }
